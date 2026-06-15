@@ -19,7 +19,7 @@ pipeline{
 		}
 		stage('Run'){
 			steps{
-				sh 'gadle run'
+				sh 'gradle run'
 			}
 		}
 		stage('Run Applicaton'){
