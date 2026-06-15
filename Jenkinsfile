@@ -17,9 +17,9 @@ pipeline{
 				sh 'gradle build'
 			}
 		}
-		stage('Test'){
+		stage('Run'){
 			steps{
-				sh 'gadle test'
+				sh 'gadle run'
 			}
 		}
 		stage('Run Applicaton'){
