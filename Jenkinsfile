@@ -1,0 +1,40 @@
+pipeline{
+	agent any
+	tools{
+		gradle 'Gradle'
+		jdk 'JDK'
+	}
+	
+	stages{
+	
+		stage('Checkout'){
+			steps{
+				git branch:'main',url:''
+			}
+		}
+		stage('Build'){
+			steps{
+				sh 'gradle build'
+			}
+		}
+		stage('Test'){
+			steps{
+				sh 'gadle test'
+			}
+		}
+		stage('Run Applicaton'){
+			steps{
+				sh 'gradle display'
+			}
+		}
+	}
+	
+	post{
+		success{
+			echo 'successfull'
+		}
+		failure{
+			echo 'failed'
+		}
+	}
+}
